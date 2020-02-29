@@ -12,7 +12,6 @@ export default class Header extends Component {
               Crossing Vibes
           </h1>
         </nav>
-  
       </>
     }
   }

@@ -9,8 +9,8 @@ export default class MessageList extends Component {
           {this.props.messages.map((message,id) => {
             return (
              <li key={id}>
-            
                <div>
+                 
                  {message}
                </div>
              </li>

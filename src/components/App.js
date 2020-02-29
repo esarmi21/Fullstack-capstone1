@@ -54,7 +54,6 @@ componentDidMount(){
         <Chatbox isLoggedIn = {this.state.isLoggedIn} messages={this.state.messages} sendMessage = {(message)=>
         {
           AuthApiService.postComment(AuthTokenService.getUsername(), message)
-          // .then(res => res.json()
           .then(data => {
             console.log('randomthing' , message)
               this.setState({messages:this.state.messages.concat(message)})
@@ -69,10 +68,3 @@ componentDidMount(){
 
 export default App
 
-
-//next steps
-//store user that is logged in in local storage
-//implement logout
-//implement commenting
-//deploy server onto heroku
-//use thingful reference
