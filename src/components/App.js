@@ -55,7 +55,6 @@ componentDidMount(){
         {
           AuthApiService.postComment(AuthTokenService.getUsername(), message)
           .then(data => {
-            console.log('randomthing' , message)
               this.setState({messages:this.state.messages.concat(message)})
           })
           .catch(error => console.log(error));
