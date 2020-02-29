@@ -6,14 +6,12 @@ export default class MessageList extends Component {
     render() {
       return (
         <ul className="message-list">                 
-          {this.props.messages.map(message => {
+          {this.props.messages.map((message,id) => {
             return (
-             <li key={message.id}>
+             <li key={id}>
+            
                <div>
-                 {message.senderId}
-               </div>
-               <div>
-                 {message.text}
+                 {message}
                </div>
              </li>
            )

@@ -1,22 +1,78 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom'
 import Header from './Header/Header'
 import Video from './Video/Video'
 import Chatbox from './Chatbox/Chatbox';
+import Login from './Login/Login'
+import Register  from './Register/Register'
+import '../App.css'
+import AuthTokenService from '../services/AuthTokenService'
+import AuthApiService from '../services/AuthApiService'
 
 class App extends Component {
 
+  state = {
+    isLoggedIn: AuthTokenService.checkLogIn(),
+    messages: []
+  }
+componentDidMount(){
+  AuthApiService.getComments()
+  .then((messages)=>{
+    this.setState({
+      messages:messages.map((message)=>message.text)
+    })
+  })
+}
   render() {
     return (
       <div className='App'>
         <header className='App__header'>
-          <Header />
-        </header>
-        <Video/>
-        <Chatbox/>
+     {!this.state.isLoggedIn && (
+       <Login isLoggedIn = {this.state.isLoggedIn} logOut = {()=>{
+        AuthTokenService.logout();
+        this.setState({isLoggedIn:false})
+      }} onLoginSuccess = {(username) =>{
+        AuthTokenService.login(username);
+        this.setState({isLoggedIn:true})
+      }}/>
+     )} 
+
+     {this.state.isLoggedIn && ( 
+     <button isLoggedIn = {this.state.isLoggedIn} 
+     className = "submit" 
+     onClick = {()=>{
+      AuthTokenService.logout();
+      this.setState({isLoggedIn:false})
+     }} >
+       Logout
+       </button>)}
+
+          {!this.state.isLoggedIn && <Register/> }
+  
+              <Header />
+          </header>
+          <Video/>
+        <Chatbox isLoggedIn = {this.state.isLoggedIn} messages={this.state.messages} sendMessage = {(message)=>
+        {
+          AuthApiService.postComment(AuthTokenService.getUsername(), message)
+          // .then(res => res.json()
+          .then(data => {
+            console.log('randomthing' , message)
+              this.setState({messages:this.state.messages.concat(message)})
+          })
+          .catch(error => console.log(error));
+
+        }}/>
       </div>
     )
   }
 }
 
 export default App
+
+
+//next steps
+//store user that is logged in in local storage
+//implement logout
+//implement commenting
+//deploy server onto heroku
+//use thingful reference
