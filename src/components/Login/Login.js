@@ -42,8 +42,6 @@ export default class LoginForm extends Component {
             type="username"
             name="usernameField"
             placeholder="username"
-            // value={this.state.username}
-            // onChange={this.handleChange}
             required
           />
 
@@ -51,8 +49,6 @@ export default class LoginForm extends Component {
             type="password"
             name="passwordField"
             placeholder="password"
-            // value={this.state.password}
-            // onChange={this.handleChange}
             required
           />
 
