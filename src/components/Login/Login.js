@@ -35,7 +35,9 @@ export default class LoginForm extends Component {
   render() {
     return (
       <div className= 'login'>
-        <form onSubmit={this.handleSubmit}>
+        <form 
+        className ="form"
+        onSubmit={this.handleSubmit}>
           <input
             type="username"
             name="usernameField"
