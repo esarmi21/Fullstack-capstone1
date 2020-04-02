@@ -11,6 +11,9 @@ export default class Header extends Component {
               {' '}
               Crossing Vibes
           </h1>
+          <h2>
+            Relax and Chat while listening to you favorite Animal Crossing tunes.
+          </h2>
         </nav>
       </>
     }
