@@ -7,3 +7,10 @@ h1{
 h2{
     color: rgb(39, 39, 39);
 }
+.Header{
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    padding: .5%;
+    align-items: center;
+}

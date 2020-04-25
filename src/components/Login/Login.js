@@ -26,7 +26,7 @@ export default class LoginForm extends Component {
         passwordField.value = ''
       })
       .catch(res => {
-        console.log(res.error)
+        console.error("incorrect username or password")
         this.setState({ error: res.error })
       })
   }

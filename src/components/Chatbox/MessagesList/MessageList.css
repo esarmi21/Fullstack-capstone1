@@ -1,15 +1,18 @@
 
 .message-list {
+    list-style: none;
     box-sizing: border-box;
-    padding: 0 0 0 6px;
+    padding: 0 0 0 20%;
     margin: 0;
     width: 100%;
     height: 100%;
     overflow: scroll;
     background: white;
+    text-align: left;
 }
 
 .message {
+    
     margin: 15px 0;
 }
 .message div:nth-child(2) {

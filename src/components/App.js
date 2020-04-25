@@ -38,7 +38,7 @@ componentDidMount(){
 
      {this.state.isLoggedIn && ( 
      <button isLoggedIn = {this.state.isLoggedIn} 
-     className = "submit" 
+     className = "submit-logout" 
      onClick = {()=>{
       AuthTokenService.logout();
       this.setState({isLoggedIn:false})
