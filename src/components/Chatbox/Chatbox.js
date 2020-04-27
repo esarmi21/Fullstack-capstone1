@@ -11,7 +11,7 @@ class Chatbox extends Component {
 
     render() {
       return (
-        <div className="app">
+        <div className="chat">
             <Title/>
           <MessageList messages={this.props.messages}/>
          {this.props.isLoggedIn &&

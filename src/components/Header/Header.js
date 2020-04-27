@@ -12,7 +12,8 @@ export default class Header extends Component {
               Crossing Vibes
           </h1>
           <h2>
-            Relax and Chat while listening to you favorite Animal Crossing tunes.
+            Relax and Chat while listening to you favorite Animal Crossing tunes.<br/>
+            Create an account to chat!
           </h2>
         </nav>
       </>

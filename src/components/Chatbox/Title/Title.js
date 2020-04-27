@@ -6,7 +6,7 @@ export default class MessageList extends Component{
     render(){
         return (
             <div className ='title'>
-              LOGIN TO CHAT
+              Welcome!
             </div>
         )
     }
