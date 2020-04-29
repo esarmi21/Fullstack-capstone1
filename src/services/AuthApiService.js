@@ -7,7 +7,7 @@ const AuthApiService = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/auth/login',
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify(credentials),
     })
@@ -22,7 +22,7 @@ const AuthApiService = {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',
-         'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/',
+         'Access-Control-Allow-Origin': '*',
        },
        body: JSON.stringify(user),
      })
@@ -37,7 +37,7 @@ const AuthApiService = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/',
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
         username,
@@ -55,7 +55,7 @@ const AuthApiService = {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/',
+        'Access-Control-Allow-Origin': '*',
       },
     })
       .then(res =>
