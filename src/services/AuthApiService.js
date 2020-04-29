@@ -7,7 +7,7 @@ const AuthApiService = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/',
+        'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/auth/login',
       },
       body: JSON.stringify(credentials),
     })
