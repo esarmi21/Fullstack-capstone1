@@ -6,7 +6,8 @@ const AuthApiService = {
     return fetch(`${config.API_ENDPOINT}/auth/login`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/',
       },
       body: JSON.stringify(credentials),
     })
@@ -20,7 +21,8 @@ const AuthApiService = {
      return fetch(`${config.API_ENDPOINT}/users`, {
        method: 'POST',
        headers: {
-         'content-type': 'application/json',
+         'Content-Type': 'application/json',
+         'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/',
        },
        body: JSON.stringify(user),
      })
@@ -34,7 +36,8 @@ const AuthApiService = {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/',
       },
       body: JSON.stringify({
         username,
@@ -52,6 +55,7 @@ const AuthApiService = {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://pure-wave-40477.herokuapp.com/',
       },
     })
       .then(res =>
