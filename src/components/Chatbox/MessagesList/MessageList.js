@@ -7,11 +7,12 @@ export default class MessageList extends Component {
     render() {
       return (
         <ul className="message-list" id="message-scroll">                 
-          {this.props.messages.map(( text ,id) => {
+          {this.props.messages.map((username, message ,id) => {
             return (
              <li key={id}>
                <div>
-                 {text}
+                 {username}:
+                 {message}
           
                </div>
              </li>
