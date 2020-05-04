@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "alias":"jay-animalcrossing-chat-app",
     "name": "animalcrossing-chat-app",
     "routes": [
         { "handle": "filesystem" },
