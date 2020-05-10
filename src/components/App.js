@@ -55,7 +55,6 @@ componentDidMount(){
         {
           AuthApiService.postComment(AuthTokenService.getUsername(), message)
           .then(data => {
-            console.log("this console log is before this.setstate")
             this.setState({messages:this.state.messages.concat({text: message, username: AuthTokenService.getUsername()})})
           })
           .catch(error => console.log(error));
