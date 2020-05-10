@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import './SubmitMessage.css'
+import TokenService from '../../../services/AuthTokenService'
 
 
 export default class SumbitMessage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            message: ''
+            message: '',
+            username: TokenService.getUsername()
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)

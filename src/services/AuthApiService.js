@@ -7,7 +7,6 @@ const AuthApiService = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify(credentials),
     })
@@ -23,7 +22,6 @@ const AuthApiService = {
       
        headers: {
          'Content-Type': 'application/json',
-         'Access-Control-Allow-Origin': '*',
        },
        body: JSON.stringify(user),
      })
@@ -39,7 +37,6 @@ const AuthApiService = {
       
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
         username,
@@ -47,10 +44,12 @@ const AuthApiService = {
       }),
     })
       .then(res =>
-        (!res.ok)
+        { console.log('res.ok log') 
+          return(!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+        
+        })
   },
   getComments(){
     return fetch(`${config.API_ENDPOINT}/comments`, {
@@ -58,7 +57,6 @@ const AuthApiService = {
       
       headers: {
         'content-type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
       },
     })
       .then(res =>

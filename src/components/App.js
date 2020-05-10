@@ -16,9 +16,9 @@ class App extends Component {
   }
 componentDidMount(){
   AuthApiService.getComments()
-  .then((messages)=>{
+  .then((response)=>{
     this.setState({
-      messages:messages.map((message)=>message.text)
+      messages: response
     })
   })
 }
@@ -55,7 +55,8 @@ componentDidMount(){
         {
           AuthApiService.postComment(AuthTokenService.getUsername(), message)
           .then(data => {
-              this.setState({messages:this.state.messages.concat(message)})
+            console.log("this console log is before this.setstate")
+            this.setState({messages:this.state.messages.concat({text: message, username: AuthTokenService.getUsername()})})
           })
           .catch(error => console.log(error));
 
